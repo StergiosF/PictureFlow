@@ -1,11 +1,16 @@
 import styles from "./App.module.css";
-import { ImageProvider } from "./context/ImageContext";
+import SearchForm from "./components/SearchForm/SearchForm";
+import MainLayout from "./components/shared/MainLayout";
+import { AppProvider } from "./context/AppContext";
 
 function App() {
   return (
-    <ImageProvider>
-      <div className={styles.app}></div>
-    </ImageProvider>
+    <AppProvider>
+      <div className={styles.app}>
+        <SearchForm />
+        {/* <MainLayout /> */}
+      </div>
+    </AppProvider>
   );
 }
 

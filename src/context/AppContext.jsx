@@ -1,11 +1,11 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
-const ImageContext = createContext();
+const AppContext = createContext();
 
 const initialState = {
   image: null,
   isLoading: false,
-  error: null,
+  error: "",
 };
 
 function reducer(state, action) {
@@ -21,22 +21,17 @@ function reducer(state, action) {
   }
 }
 
-export function ImageProvider({ children }) {
+function AppProvider({ children }) {
   const [{ image, isLoading, error }, dispatch] = useReducer(
     reducer,
     initialState
   );
 
   return (
-    <ImageContext.Provider value={{ image, isLoading, error, dispatch }}>
+    <AppContext.Provider value={{ image, isLoading, error, dispatch }}>
       {children}
-    </ImageContext.Provider>
+    </AppContext.Provider>
   );
 }
 
-export function useImage() {
-  const context = useContext(ImageContext);
-  if (context === undefined)
-    throw new Error("ImageContext was used outside the ImageProvider");
-  return context;
-}
+export { AppContext, AppProvider };
