@@ -14,7 +14,11 @@ async function fetchDetails(query, orientation, color) {
   const delayPromise = new Promise((resolve) => setTimeout(resolve, 800));
   await delayPromise;
 
-  const res = await fetch(`${BASE_URL}/search/photos?query=${query}`, {
+  let url = `${BASE_URL}/search/photos?query=${query}`;
+  if (orientation) url += `&orientation=${orientation}`;
+  if (color) url += `&color=${color}`;
+
+  const res = await fetch(url, {
     headers,
   });
 

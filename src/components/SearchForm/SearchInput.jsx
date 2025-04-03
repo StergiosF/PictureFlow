@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import useApp from "../../context/useApp";
 import styles from "./SearchInput.module.css";
+import SearchButton from "./SearchButton";
 
 function SearchInput() {
   const [search, setSearch] = useState("");
@@ -15,7 +16,7 @@ function SearchInput() {
   }
 
   return (
-    <form onSubmit={(e) => onSearch(e)}>
+    <form onSubmit={(e) => onSearch(e)} className={styles.searchInput}>
       <input
         ref={inputRef}
         type="text"
@@ -24,6 +25,7 @@ function SearchInput() {
         className={styles.searchInput}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <SearchButton onSearch={onSearch} />
     </form>
   );
 }
