@@ -1,4 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gidole&display=swap");
+
+:root {
+  /* Dark Tones */
+  --color-dark--0: #222222;
+  --color-dark--1: #1d1d1d;
+  --color-dark--2: #0b0b0c;
+
+  /* Light Tones */
+  --color-light--0: #e7e7e7;
+  --color-light--1: #d0d0d0;
+  --color-light--2: #c3c3c3;
+  --color-light--3: #a6a6a6;
+  --color-light--4: #6c6c6c;
+}
 
 * {
   margin: 0;
@@ -11,7 +25,7 @@ html {
 }
 
 body {
-  font-family: "Winky Sans", sans-serif;
+  font-family: "Gidole", sans-serif;
   font-weight: 400;
 }
 

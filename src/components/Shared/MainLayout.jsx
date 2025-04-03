@@ -1,5 +1,5 @@
 import useApp from "../../context/useApp";
-import SearchedImage from "../ImageGallery/SearchedImage";
+import ImageResult from "../ImageResult/ImageResult";
 import ErrorMessage from "./ErrorMessage";
 import Loader from "./Loader";
 import styles from "./MainLayout.module.css";
@@ -8,11 +8,11 @@ function MainLayout() {
   const { isLoading, error } = useApp();
 
   return (
-    <div className={styles.mainLayout}>
+    <main className={styles.mainLayout}>
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
-      {!isLoading && !error && <SearchedImage />}
-    </div>
+      {!isLoading && !error && <ImageResult />}
+    </main>
   );
 }
 

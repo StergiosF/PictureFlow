@@ -4,7 +4,9 @@ import Logo from "../Shared/Logo";
 function SearchForm() {
   return (
     <nav className={styles.searchForm}>
-      <Logo />
+      <div className={styles.innerContainer}>
+        <Logo />
+      </div>
     </nav>
   );
 }

@@ -8,7 +8,7 @@ function App() {
     <AppProvider>
       <div className={styles.app}>
         <SearchForm />
-        {/* <MainLayout /> */}
+        <MainLayout />
       </div>
     </AppProvider>
   );
