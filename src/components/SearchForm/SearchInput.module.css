@@ -1,7 +1,7 @@
 .searchInput {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.8rem;
   font-family: inherit;
   font-weight: inherit;
 }
@@ -11,15 +11,17 @@
   padding: 0 1.2rem;
   width: 48rem;
   font-size: 1.6rem;
-  color: var(--color-light--1);
+  color: var(--color-light--0);
   background-color: transparent;
-  border: 2px solid var(--color-light--1);
+  border: 2px solid var(--color-light--0);
+  transition: all 0.25s;
 }
 
-.searchInput:focus {
+.searchInput input:focus {
   outline: none;
+  border: 2px solid #fff;
 }
 
-.searchInput::placeholder {
-  color: var(--color-light--1);
+.searchInput input::placeholder {
+  color: var(--color-light--0);
 }
