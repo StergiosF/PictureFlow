@@ -4,7 +4,7 @@ import styles from "./ErrorMessage.module.css";
 function ErrorMessage() {
   const { error } = useApp();
 
-  return <h3 className={styles.errorMessage}>{error} 💥</h3>;
+  return <p className={styles.errorMessage}>{error} 💥</p>;
 }
 
 export default ErrorMessage;

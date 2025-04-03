@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Gidole&display=swap");
 
 :root {
+  --brand-color: #0196b3;
+
   /* Dark Tones */
   --color-dark--0: #222222;
   --color-dark--1: #1d1d1d;

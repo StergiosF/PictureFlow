@@ -1,0 +1,16 @@
+.searchInput {
+  padding: 1.2rem;
+  width: 48rem;
+  font-size: 1.6rem;
+  color: var(--color-light--1);
+  background-color: transparent;
+  border: 2px solid var(--color-light--1);
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--color-light--1);
+}

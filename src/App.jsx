@@ -1,6 +1,6 @@
 import styles from "./App.module.css";
 import SearchForm from "./components/SearchForm/SearchForm";
-import MainLayout from "./components/shared/MainLayout";
+import MainLayout from "./components/Shared/MainLayout";
 import { AppProvider } from "./context/AppContext";
 
 function App() {

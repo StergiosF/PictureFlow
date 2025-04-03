@@ -7,10 +7,14 @@
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 3.4rem;
+  padding: 0 3.8rem;
 }
 
 .innerContainer {
   transform: skew(18deg);
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
