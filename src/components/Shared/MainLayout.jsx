@@ -5,16 +5,23 @@ import ErrorMessage from "./ErrorMessage";
 import Loader from "./Loader";
 import styles from "./MainLayout.module.css";
 import unsplashAPI from "../../api/unsplashAPI";
+import Filters from "../Filters/Filters";
+import WelcomeMessage from "./WelcomeMessage";
 
 function MainLayout() {
-  const { search, isLoading, error, dispatch } = useApp();
+  const { search, color, orientation, isLoading, result, error, dispatch } =
+    useApp();
 
   useEffect(() => {
     if (!search) return;
 
     async function getImage() {
       try {
-        const fetchedResult = await unsplashAPI.fetchDetails(search);
+        const fetchedResult = await unsplashAPI.fetchDetails(
+          search,
+          color || null,
+          orientation || null
+        );
         dispatch({
           type: "SEARCH_SUCCESS",
           payload: {
@@ -37,13 +44,18 @@ function MainLayout() {
     }
 
     getImage();
-  }, [search, dispatch]);
+  }, [search, color, orientation, dispatch]);
 
   return (
     <main className={styles.mainLayout}>
-      {isLoading && <Loader />}
-      {error && <ErrorMessage />}
-      {!isLoading && !error && <ImageResult />}
+      <Filters />
+
+      <div className={styles.resultContainer}>
+        {!result && !isLoading && !error && <WelcomeMessage />}
+        {isLoading && <Loader />}
+        {error && <ErrorMessage />}
+        {result && !isLoading && !error && <ImageResult />}
+      </div>
     </main>
   );
 }

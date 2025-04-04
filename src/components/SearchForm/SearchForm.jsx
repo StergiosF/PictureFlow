@@ -4,12 +4,14 @@ import SearchInput from "./SearchInput";
 
 function SearchForm() {
   return (
-    <nav className={styles.searchForm}>
-      <div className={styles.innerContainer}>
-        <Logo />
-        <SearchInput />
-      </div>
-    </nav>
+    <header className={styles.searchForm}>
+      <nav>
+        <div className={styles.innerContainer}>
+          <Logo />
+          <SearchInput />
+        </div>
+      </nav>
+    </header>
   );
 }
 

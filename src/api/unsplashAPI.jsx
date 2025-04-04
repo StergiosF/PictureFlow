@@ -11,7 +11,7 @@ function getRandomImage(images) {
 }
 
 async function fetchDetails(query, orientation, color) {
-  const delayPromise = new Promise((resolve) => setTimeout(resolve, 800));
+  const delayPromise = new Promise((resolve) => setTimeout(resolve, 500));
   await delayPromise;
 
   let url = `${BASE_URL}/search/photos?query=${query}`;

@@ -1,0 +1,95 @@
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 36em;
+  background-color: #000;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 3.4rem;
+}
+
+.filters div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.filters label {
+  font-size: 1.8rem;
+  color: var(--color-light--0);
+}
+
+.filters select {
+  height: 4.6rem;
+  padding: 0 2.4rem;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-family: inherit;
+  border: 2px solid var(--color-light--0);
+  color: var(--color-light--0);
+  cursor: pointer;
+  transition: all 0.25s;
+  width: 100%;
+}
+
+.filters select:focus {
+  outline: none;
+  border: 2px solid #fff;
+}
+
+.filters select option {
+  font-family: inherit;
+  background-color: #000;
+  font-size: 1.6rem;
+  color: var(--color-light--0);
+}
+
+.applyFilters {
+  height: 4.6rem;
+  padding: 0 2.4rem;
+  margin-top: 3.4rem;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: 2px solid var(--color-light--0);
+  color: var(--color-light--0);
+  cursor: pointer;
+  transition: all 0.25s;
+  width: 100%;
+}
+
+.applyFilters:hover {
+  background-color: var(--color-light--0);
+  color: #000;
+}
+
+.copyright {
+  border-top: 1px solid var(--color-light--2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
+}
+
+.copyright p {
+  color: var(--color-light--3);
+  padding: 0 3.4rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}

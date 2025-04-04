@@ -5,12 +5,13 @@ import SearchButton from "./SearchButton";
 
 function SearchInput() {
   const [search, setSearch] = useState("");
+
   const { isLoading, dispatch } = useApp();
   const inputRef = useRef(null);
 
   function onSearch(e) {
     e.preventDefault();
-    dispatch({ type: "SEARCH_START", payload: search });
+    dispatch({ type: "SEARCH_START", payload: { search } });
     setSearch("");
     inputRef.current.blur(); // Remove focus
   }
@@ -25,7 +26,7 @@ function SearchInput() {
         className={styles.searchInput}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <SearchButton onSearch={onSearch} />
+      <SearchButton />
     </form>
   );
 }
