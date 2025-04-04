@@ -10,7 +10,7 @@ function getRandomImage(images) {
   return images[randomIndex];
 }
 
-async function fetchDetails(query, orientation, color) {
+async function fetchDetails(query, color, orientation) {
   const delayPromise = new Promise((resolve) => setTimeout(resolve, 500));
   await delayPromise;
 

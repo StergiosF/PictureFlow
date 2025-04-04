@@ -10,6 +10,8 @@ function Filters() {
 
   function applyFilters(e) {
     e.preventDefault();
+
+    if (!search) return;
     dispatch({ type: "SEARCH_START", payload: { search, color, orientation } });
   }
 
@@ -21,7 +23,11 @@ function Filters() {
       <div className={styles.filters}>
         <div className={styles.color}>
           <label htmlFor="color">Color</label>
-          <select id="color" onChange={(e) => setColor(e.target.value)}>
+          <select
+            id="color"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+          >
             <option value="">Not Selected</option>
             <option value="black_and_white">Black and White</option>
             <option value="black">Black</option>
@@ -40,6 +46,7 @@ function Filters() {
           <label htmlFor="orientation">Orientation</label>
           <select
             id="orientation"
+            value={orientation}
             onChange={(e) => setOrientation(e.target.value)}
           >
             <option value="">Not Selected</option>

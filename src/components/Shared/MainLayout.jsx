@@ -19,14 +19,14 @@ function MainLayout() {
       try {
         const fetchedResult = await unsplashAPI.fetchDetails(
           search,
-          color || null,
-          orientation || null
+          color,
+          orientation
         );
         dispatch({
           type: "SEARCH_SUCCESS",
           payload: {
             image: {
-              url: fetchedResult.urls.full,
+              url: fetchedResult.urls.regular,
               date: fetchedResult.created_at,
               description: fetchedResult.description,
               likes: fetchedResult.likes,
