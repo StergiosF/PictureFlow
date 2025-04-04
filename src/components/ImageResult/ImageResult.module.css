@@ -1,9 +1,108 @@
 .imageResult {
-  background-color: darkcyan;
   width: 100%;
   height: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.imageContainer {
+  width: max-content;
+  height: 100%;
+  background-color: var(--color-light--2);
+  padding: 3.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+  position: relative;
+}
+
+.image {
+  border: 8px solid #000;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+
+  height: 84%;
+  width: auto;
+  object-fit: contain;
+}
+
+.imageDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 1.8rem;
+  max-width: 60rem;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.likes span {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 0.6rem;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.profileImage {
+  border-radius: 50%;
+  height: 4.8rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+}
+
+.smallInfo {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.name {
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.username {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.userDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkBtn {
+  font-size: 1.4rem;
+  padding: 1.2rem 1.8rem;
+  background-color: #000;
+  color: var(--color-light--0);
+  outline: 1px solid #000;
+  transition: all 0.3s;
+}
+
+.linkBtn:hover {
+  outline: 1px solid var(--color-light--0);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  color: #fff;
 }

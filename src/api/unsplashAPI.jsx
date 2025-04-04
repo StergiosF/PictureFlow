@@ -31,6 +31,22 @@ async function fetchDetails(query, color, orientation) {
   }
 
   const randomImage = getRandomImage(data.results);
+
+  await Promise.all([
+    new Promise((resolve) => {
+      const img = new Image();
+      img.src = randomImage.urls.regular;
+      img.onload = resolve;
+      img.onerror = resolve;
+    }),
+    new Promise((resolve) => {
+      const img = new Image();
+      img.src = randomImage.user.profile_image.medium;
+      img.onload = resolve;
+      img.onerror = resolve;
+    }),
+  ]);
+
   return randomImage;
 }
 

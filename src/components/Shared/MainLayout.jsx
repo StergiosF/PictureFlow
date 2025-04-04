@@ -29,10 +29,12 @@ function MainLayout() {
               url: fetchedResult.urls.regular,
               date: fetchedResult.created_at,
               description: fetchedResult.description,
+              alt: fetchedResult.alt_description,
               likes: fetchedResult.likes,
             },
             user: {
               name: fetchedResult.user.name,
+              username: fetchedResult.username,
               link: fetchedResult.user.links.html,
               image: fetchedResult.user.profile_image.medium,
             },
