@@ -11,8 +11,14 @@ function Filters() {
   function applyFilters(e) {
     e.preventDefault();
 
-    if (!search) return;
-    dispatch({ type: "SEARCH_START", payload: { search, color, orientation } });
+    if (!search) {
+      alert("Search for an image first");
+      return;
+    }
+    dispatch({
+      type: "SEARCH_START",
+      payload: { search, color, orientation },
+    });
   }
 
   const date = new Date();
@@ -55,12 +61,15 @@ function Filters() {
             <option value="squarish">Squarish</option>
           </select>
         </div>
-        <button
-          className={styles.applyFilters}
-          onClick={(e) => applyFilters(e)}
-        >
-          Apply Filters
-        </button>
+
+        {(color || orientation) && (
+          <button
+            className={styles.applyFilters}
+            onClick={(e) => applyFilters(e)}
+          >
+            Apply Filters
+          </button>
+        )}
       </div>
       <div className={styles.copyright}>
         <p>&#169; {year} - PictureFlow</p>
