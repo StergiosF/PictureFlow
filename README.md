@@ -4,11 +4,11 @@ PictureFlow is a single-page web application built with Vite and React that lets
 
 ## Deployment
 
-Deployed Website: [https://pictureflow-yourdeploymenturl.netlify.app](https://pictureflow-yourdeploymenturl.netlify.app)
+Deployed Website: https://pictureflow.netlify.app
 
 ## About The Project
 
-[![Results Page Preview](previews/results_page.png)](https://pictureflow-yourdeploymenturl.netlify.app)
+[![Results Page Preview](public/app_preview.png)](https://pictureflow.netlify.app)
 
 PictureFlow is designed for photography enthusiasts who want a simple yet powerful interface to explore and discover images. Using the Unsplash API, PictureFlow retrieves high-quality images based on your search criteria. Optional filters for orientation and color allow you to refine your search, and the application handles any network issues by displaying a user-friendly error message.
 
