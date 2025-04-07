@@ -1,6 +1,6 @@
 # 🎞️ PictureFlow
 
-PictureFlow is a single-page web application built with Vite and React that lets you search for and display stunning photos from Unsplash. With PictureFlow you can enter a search term—and optionally specify the preferred photo orientation and color—to have one randomly chosen image from the results displayed.
+PictureFlow is a single-page web application built with Vite and React that lets you search and display stunning photos from Unsplash. With PictureFlow you can enter a search term—and optionally specify the preferred photo orientation and color—to have one randomly chosen image from the results displayed.
 
 ## Deployment
 
