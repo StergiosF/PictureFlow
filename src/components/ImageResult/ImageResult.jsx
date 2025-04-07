@@ -11,21 +11,23 @@ function formatDate(isoString) {
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",
     hour12: true,
   });
 }
 
 function ImageResult() {
+  // 1. Context Access
   const { result } = useApp();
 
   const { image, user } = result;
 
+  // 2. Date Formatting
   const formattedDate = formatDate(image.date);
 
   return (
     <div className={styles.imageResult}>
       <div className={styles.imageContainer}>
+        {/* User Profile Section */}
         <div className={styles.userContainer}>
           <div className={styles.userDetails}>
             <div className={styles.smallInfo}>
@@ -42,11 +44,14 @@ function ImageResult() {
               </div>
             </div>
           </div>
+
+          {/* Unsplash Profile Link */}
           <a href={user.link} target="_blank" className={styles.linkBtn}>
             Unsplash Profile
           </a>
         </div>
 
+        {/* Main Image Display */}
         <img src={image.url} alt={image.alt} className={styles.image} />
         <div>
           <div className={styles.imageDetails}>
@@ -54,7 +59,7 @@ function ImageResult() {
               {image.description ? image.description : "No description"}
             </p>
             <div className={styles.likes}>
-              <IoHeartSharp size={32} color="#e31b23" />
+              <IoHeartSharp size={28} color="#e31b23" />
               <span>{image.likes}</span>
             </div>
           </div>

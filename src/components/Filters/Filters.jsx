@@ -3,11 +3,14 @@ import styles from "./Filters.module.css";
 import useApp from "../../context/useApp";
 
 function Filters() {
+  // 1. Local State Management
   const [color, setColor] = useState("");
   const [orientation, setOrientation] = useState("");
 
+  // 2. Context Access
   const { search, dispatch } = useApp();
 
+  // 3. Filter Application Handler
   function applyFilters(e) {
     e.preventDefault();
 
@@ -21,12 +24,26 @@ function Filters() {
     });
   }
 
+  // 4. Reset Filters
+  function resetFilters() {
+    setColor("");
+    setOrientation("");
+    if (search) {
+      dispatch({
+        type: "SEARCH_START",
+        payload: { search, color: undefined, orientation: undefined },
+      });
+    }
+  }
+
+  // 5. Footer Year
   const date = new Date();
   const year = date.getFullYear();
 
   return (
     <div className={styles.filtersContainer}>
       <div className={styles.filters}>
+        {/* Color Filter */}
         <div className={styles.color}>
           <label htmlFor="color">Color</label>
           <select
@@ -48,6 +65,8 @@ function Filters() {
             <option value="blue">Blue</option>
           </select>
         </div>
+
+        {/* Orientation Filter */}
         <div className={styles.orientation}>
           <label htmlFor="orientation">Orientation</label>
           <select
@@ -62,15 +81,33 @@ function Filters() {
           </select>
         </div>
 
-        {(color || orientation) && (
-          <button
-            className={styles.applyFilters}
-            onClick={(e) => applyFilters(e)}
-          >
-            Apply Filters
-          </button>
-        )}
+        {/* Action Buttons */}
+        <div className={styles.buttonGroup}>
+          {(color || orientation) && (
+            <>
+              <button
+                type="button"
+                onClick={applyFilters}
+                className={styles.filtersButton}
+                disabled={!search}
+                aria-label="Apply filters"
+              >
+                Apply Filters
+              </button>
+              <button
+                type="button"
+                onClick={resetFilters}
+                className={`${styles.filtersButton} ${styles.resetButton}`}
+                aria-label="Reset filters"
+              >
+                Reset
+              </button>
+            </>
+          )}
+        </div>
       </div>
+
+      {/* Footer */}
       <footer className={styles.copyright}>
         <p>&#169; {year} - PictureFlow</p>
         <p>All rights reserved.</p>

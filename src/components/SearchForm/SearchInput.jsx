@@ -4,20 +4,39 @@ import styles from "./SearchInput.module.css";
 import SearchButton from "./SearchButton";
 
 function SearchInput() {
-  const [search, setSearch] = useState("");
+  // 1. Local State Management
+  const [search, setSearch] = useState(""); // Tracks input field value
 
-  const { isLoading, dispatch } = useApp();
-  const inputRef = useRef(null);
+  // 2. Context Access
+  const { isLoading, dispatch } = useApp(); // Gets global state methods
 
-  function onSearch(e) {
+  // 3. DOM Reference
+  const inputRef = useRef(null); // Reference to input element
+
+  // 4. Search Handler
+  function handleSearch(e) {
     e.preventDefault();
-    dispatch({ type: "SEARCH_START", payload: { search } });
+
+    // Validate input
+    if (!search.trim()) return; // Prevent empty searches
+
+    // Dispatch search action
+    dispatch({
+      type: "SEARCH_START",
+      payload: {
+        search: search.trim(), // Trim whitespace
+        color: "",
+        orientation: "",
+      },
+    });
+
+    // Reset input field
     setSearch("");
-    inputRef.current.blur(); // Remove focus
+    inputRef.current.blur();
   }
 
   return (
-    <form onSubmit={(e) => onSearch(e)} className={styles.searchInput}>
+    <form onSubmit={handleSearch} className={styles.searchForm} role="search">
       <input
         ref={inputRef}
         type="text"
@@ -25,8 +44,10 @@ function SearchInput() {
         placeholder={isLoading ? "Searching..." : "Search for an image..."}
         className={styles.searchInput}
         onChange={(e) => setSearch(e.target.value)}
+        aria-label="Search images" // Accessibility
+        disabled={isLoading} // Disable during loading
       />
-      <SearchButton />
+      <SearchButton disabled={isLoading} />
     </form>
   );
 }

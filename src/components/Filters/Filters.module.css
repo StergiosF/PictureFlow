@@ -57,27 +57,35 @@
   color: var(--color-light--0);
 }
 
-.applyFilters {
+.buttonGroup {
+  margin-top: 2.6rem;
+}
+
+.filtersButton {
   height: 4.6rem;
   padding: 0 2.4rem;
-  margin-top: 3.4rem;
   background-color: transparent;
+  margin-top: 1.2rem;
   font-size: 1.6rem;
   font-weight: 600;
   font-family: inherit;
   border: 2px solid var(--color-light--0);
   color: var(--color-light--0);
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.2s;
   width: 100%;
 }
 
-.applyFilters:hover {
+.resetButton {
+  color: #a30000;
+}
+
+.filtersButton:hover {
   background-color: var(--color-light--0);
   color: #000;
 }
 
-.applyFilters:active {
+.filtersButton:active {
   scale: 0.9;
 }
 
