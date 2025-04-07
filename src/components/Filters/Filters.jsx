@@ -71,10 +71,10 @@ function Filters() {
           </button>
         )}
       </div>
-      <div className={styles.copyright}>
+      <footer className={styles.copyright}>
         <p>&#169; {year} - PictureFlow</p>
         <p>All rights reserved.</p>
-      </div>
+      </footer>
     </div>
   );
 }

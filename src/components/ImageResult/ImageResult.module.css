@@ -38,7 +38,14 @@
 
 .description {
   font-size: 1.8rem;
-  max-width: 60rem;
+  max-width: 58rem;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .likes {
