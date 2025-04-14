@@ -43,7 +43,7 @@ function MainLayout() {
             },
             user: {
               name: fetchedResult.user.name,
-              username: fetchedResult.user.username, // Fixed: was missing .user
+              username: fetchedResult.user.username,
               link: fetchedResult.user.links.html,
               image: fetchedResult.user.profile_image.medium,
             },
