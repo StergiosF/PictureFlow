@@ -40,7 +40,7 @@ async function fetchDetails(query, color, orientation) {
   // Response data
   const data = await res.json();
 
-  // Check for empty results
+  // Check for empty result
   if (data.results.length === 0) {
     throw new Error("No images found matching your search");
   }
