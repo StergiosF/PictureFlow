@@ -25,7 +25,7 @@ async function fetchDetails(query, color, orientation) {
   await delayPromise;
 
   // API URL with query parameters
-  let url = `${BASE_URL}/search/photos?query=${query}`;
+  let url = `${BASE_URL}/search/photos?query=${query}&per_page=30`;
   if (orientation) url += `&orientation=${orientation}`;
   if (color) url += `&color=${color}`;
 
